@@ -28,9 +28,9 @@
 }*/
 
 
+/************************************************************Sans Objet******************************************************************* */
 
-
-function Ajuster(fruit) {
+/*function Ajuster(fruit) {
     let sousTotalPeches = document.getElementById("sousTotalPeches");
     let sousTotalPoires = document.getElementById("sousTotalPoires");
     let sousTotalPommes = document.getElementById("sousTotalPommes");
@@ -48,8 +48,62 @@ function Ajuster(fruit) {
     document.getElementById("total").innerText  = +sousTotalPeches.innerHTML + +sousTotalPommes.innerHTML + +sousTotalPoires.innerHTML;
 
 
+}*/
+
+let fruits = {
+    peches: {
+        prix: 0,
+        quantity: 0,
+        sousTotal: 0
+    },
+    poires: {
+        prix: 0,
+        quantite: 0,
+        sousTotal: 0
+    },
+    pommes: {
+        prix: 0,
+        quantite: 0,
+        sousTotal: 0
+    }
+   
+};
+
+function Ajuster(fruit) {
+    switch (fruit) {
+        case "Peches":
+            fruits.peches.prix = parseInt(document.getElementById("prixPeches").innerText);
+            fruits.peches.quantity = document.getElementById("nbPeches").value;
+            fruits.peches.sousTotal = fruits.peches.prix * fruits.peches.quantity;
+            document.getElementById("sousTotalPeches").innerHTML = fruits.peches.sousTotal;
+            CalculerTotal();
+            break;
+
+            case "Poires":
+                fruits.poires.prix = parseInt(document.getElementById("prixPoires").innerText);
+                fruits.poires.quantite = document.getElementById("nbPoires").value;
+                fruits.poires.sousTotal = fruits.poires.prix * fruits.poires.quantite;
+                document.getElementById("sousTotalPoires").innerHTML = fruits.poires.sousTotal;
+                CalculerTotal();
+                break;
+
+                case "Pommes":
+                    fruits.pommes.prix = parseInt(document.getElementById("prixPommes").innerText);
+                    fruits.pommes.quantite = document.getElementById("nbPommes").value;
+                    fruits.pommes.sousTotal = fruits.pommes.prix * fruits.pommes.quantite;
+                    document.getElementById("sousTotalPommes").innerHTML = fruits.pommes.sousTotal;
+                    CalculerTotal();
+                    break;
+    }
 }
 
+function CalculerTotal(){
+
+ document.getElementById("total").innerText  = +sousTotalPeches.innerHTML + +sousTotalPommes.innerHTML + +sousTotalPoires.innerHTML
+ 
+
+
+}
 
 function Valider(){
     let totalFruits = +document.getElementById("nbPeches").value + +document.getElementById("nbPoires").value + +document.getElementById("nbPommes").value
