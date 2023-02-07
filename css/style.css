@@ -92,6 +92,7 @@ tfoot * {
 
 .center{
 	margin-top:1rem;
+
 }
 
 
@@ -120,6 +121,7 @@ tfoot * {
 	-webkit-user-select: none;
 	touch-action: manipulation;
 	white-space: nowrap;
+	
   }
   
   .boutons input:disabled {

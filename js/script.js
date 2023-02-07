@@ -124,6 +124,16 @@ function Valider(){
     return true;
 }
 
+function Reset(){
+    document.getElementById("sousTotalPeches").innerText=0;
+    document.getElementById("sousTotalPoires").innerText=0;
+    document.getElementById("sousTotalPommes").innerText=0;
+    document.getElementById("total").innerText=0;
+    document.getElementById("errorValeur").classList.add("invisible")
+    document.getElementById("errorMax").classList.add("invisible")
+}
+
+addEventListener('reset', ()=> {Reset()})
 
 
 
